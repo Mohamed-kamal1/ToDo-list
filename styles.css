@@ -1,0 +1,196 @@
+*{
+  --main-color: #3b536a
+}
+/* width */
+::-webkit-scrollbar {
+    width: 0;
+}
+/*----------------------- header -----------------------*/
+header {
+    background-color: var(--main-color);
+    height: 10vh;
+    color: #fff;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+header img {
+    width: 50px;
+}
+header >h1{
+    color: white;
+}
+
+/*----------------------- main -----------------------*/
+main {
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 20px 80px;
+    background-color: #89CFF0;
+    min-height: 80vh;
+}
+main h1 {
+    color: var(--main-color);
+}
+.input{
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom:40px ;
+}
+.input label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.input input {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+button {
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.task {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li button:last-child {
+    background-color: #950b0b;
+}
+
+.completed-tasks .task p{
+    text-decoration: line-through;
+    color: #888;
+}
+
+.tasks, .completed-tasks{
+    background-color: rgba(59, 83, 106, 0.2);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    height: 30vh;
+}
+#taskList , #completedList{
+    height: calc(100% - 80px);
+    overflow-y: scroll;
+    list-style: none;
+    padding: 0;
+}
+
+/*----------------------- aside -----------------------*/
+aside{
+    background-color: rgba(59, 83, 106, 0.9);
+    color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    min-height: calc(90vh - 60px);
+    width: 30vw;
+    position: fixed;
+    top: calc(10vh + 20px);
+    right: 0;
+    transition: 0.5s;
+    overflow-x: hidden;
+}
+.closed{
+    right: calc(-30vw - 40px);
+}
+textarea {
+    width: 100%;
+    height: 200px;
+    background-color: #eee;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+aside img{
+    width: 40px;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    padding: 20px 40px;
+    background-color: #aaa;
+}
+
+.notification{
+    background-color: rgba(59, 83, 106, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    /*display: none;*/
+    position: fixed;
+    top: calc(10vh + 20px);
+    width: 200px;
+    left:  calc(50% - 100px);
+    text-align: center;
+    transition: 1s;
+    overflow-x: hidden;
+}
+.notification-text{
+    font-size: 22px;
+}
+.notification-close{
+    top: -150px;
+}
+
+.notification-list{
+    width: 30%;
+    position: fixed;
+    top: 10vh;
+    right: 10px;
+    background-color: rgba(59, 83, 106, 0.8);
+    height: 50vh;
+    overflow-y: hidden;
+    transition: 0.5s;
+
+}
+.notification-list-closed{
+    top: -60vh;
+    display: block;
+}
+.aside-btn{
+    background-color: #aaa;
+}
+
+@media screen and (max-width: 768px) {
+    aside {
+        width: calc(100vw - 60px);
+        right: 10px ;
+
+    }
+    .closed{
+        right: calc(-100vw - 60px);
+
+    }
+    main{
+        padding: 5px;
+    }
+    header {
+        padding: 0 20px;
+    }
+    .tasks , .completed-tasks{
+        padding: 10px 0;
+    }
+    .task{
+        padding: 5px;
+    }
+
+}
